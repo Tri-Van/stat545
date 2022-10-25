@@ -1,10 +1,7 @@
 ---
-title: "Demo R makr down"
+title: "excercise_2&3"
 output: html_document
 date: "2022-09-15"
-theme: cerulean
-toc: true
-toc_float: true
 ---
 
 ```{r setup, include=FALSE}
@@ -30,3 +27,9 @@ plot(pressure)
 ```
 
 Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+
+Here's a display of mtcars data
+```{r, echo=FALSE}
+DT::datatable(mtcars)
+```
+The mtcars data has `r nrow(mtcars)`
