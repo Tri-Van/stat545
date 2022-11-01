@@ -20,3 +20,14 @@ gdpPercap_plot + log_gdpPercap_plot
 gapminder %>% 
   mutate(gdpPercap_scaled = (log(gdpPercap) - mean(log(gdpPercap))) / sd(log(gdpPercap)),
          pop_scaled = (log(pop) - mean(log(pop))) / sd(log(pop)))
+
+
+my_scale <- function(x, remove_na = TRUE, ...) {
+  logx <- log(x)
+  (logx - mean(logx, na.rm = remove_na, ...)) / sd(logx, na.rm = remove_na)
+}
+my_scale(1:10)
+
+gapminder %>% 
+  mutate(gdpPercap = my_scale(gdpPercap),
+         pop = my_scale(pop))
