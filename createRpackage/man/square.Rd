@@ -2,20 +2,21 @@
 % Please edit documentation in R/square.R
 \name{square}
 \alias{square}
-\title{Square a number or vector of numbers}
+\title{Square a number or vector/list of numbers}
 \usage{
 square(x)
 }
 \arguments{
-\item{x}{a number of a numeric vector to be squared}
+\item{x}{a number of a numeric vector/list to be squared}
 }
 \value{
 the square of x
 }
 \description{
-Square a number or vector of numbers
+Square a number or vector/list of numbers
 }
 \examples{
 square(10) # should be 100
 square(c(2,4)) # should be c(4,16)
+square(as.list(c(2,4))) # should be c(4,16)
 }
